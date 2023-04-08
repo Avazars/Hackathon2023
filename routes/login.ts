@@ -8,8 +8,4 @@ loginRouter.get('/', (req: Request, res: Response) => {
     res.render('pages/LoginPage', {pageTitle: "Login"});
 });
 
-http.get('*',function(req,res){  
-    res.redirect('http://exmple.com'+req.url)
-})
-
 export default loginRouter;

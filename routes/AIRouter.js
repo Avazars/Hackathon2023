@@ -19,7 +19,7 @@ const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
-function start(prompt) {
+function generateText(prompt) {
     return __awaiter(this, void 0, void 0, function* () {
         const completion = yield openai.createChatCompletion({
             model: "gpt-3.5-turbo",
@@ -28,13 +28,30 @@ function start(prompt) {
         return completion.data.choices[0].message;
     });
 }
+function generateArt(prompt) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const completion = yield openai.createImage({
+            prompt: prompt,
+            n: 1,
+            size: "256x256",
+        });
+        return completion.data.url;
+    });
+}
 const AIRouter = express_1.default.Router();
 AIRouter.get('/', (req, res) => {
-    res.render('pages/main', { pageTitle: "main" });
+    res.render('pages/test', { pageTitle: "test" });
 });
-AIRouter.post('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+AIRouter.post('/text', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { message } = req.body;
-    const reply = yield start(message);
+    const reply = yield generateText(message);
+    console.log("Text Gen");
     res.send({ message: reply });
+}));
+AIRouter.post('/img', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { message } = req.body;
+    const replyImg = yield generateArt(message);
+    console.log(replyImg);
+    res.send({ message: replyImg });
 }));
 exports.default = AIRouter;

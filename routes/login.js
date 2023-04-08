@@ -9,7 +9,4 @@ var http = (0, express_1.default)();
 loginRouter.get('/', (req, res) => {
     res.render('pages/LoginPage', { pageTitle: "Login" });
 });
-http.get('*', function (req, res) {
-    res.redirect('http://exmple.com' + req.url);
-});
 exports.default = loginRouter;

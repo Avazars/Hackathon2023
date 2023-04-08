@@ -1,7 +1,7 @@
 import express from 'express';
 import loginRouter from './routes/login'
 import mainMenuRouter from './routes/mainmenu';
-import mainRouter from './routes/main'
+import testRouter from './routes/testRouter'
 import AIRouter from "./routes/AIRouter";
 
 const app = express();
@@ -14,7 +14,7 @@ app.use(express.json());
 app.use('/', loginRouter);
 app.use('/main', mainMenuRouter);
 
-app.use('/test', mainRouter);
+app.use('/test', testRouter);
 app.use('/ai',  AIRouter);
 
 app.listen(port, () => console.log(`Express app running on port ${port}!`));
