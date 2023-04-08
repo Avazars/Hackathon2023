@@ -21,57 +21,53 @@ h2 {
     text-shadow: 2px 2px #000000;
 }
 
+.columns{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .column {
+    font-size: larger;
+    padding: 20px;
     display: flex;
     flex-direction: column;
+    align-content: center;
     float: left;
-    width: 33%;
+    width: 25%;
 }
 
-.padded {
-    margin-left: 10px;
-    font-size: larger;
+.column select {
+    height: 30px;
+    margin-bottom: 15px;
 }
 
-.extraPadded {
-    margin-left: 30px;
-    margin-right: 10px;
-    font-size: larger;
+.column label {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.column textarea{
+    margin-bottom: 15px;
+}
+
+.fillboxes{
+    height: 40px;
 }
 
 .context {
     box-sizing: border-box;
-    height: 768px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
+    height: 700px;
 }
 
 .output {
     box-sizing: border-box;
-    height: 256px;
-    margin-left: 30px;
-    margin-right: 10px;
-    margin-bottom: 10px;
+    height: 600px;
 }
 
 input[type=checkbox] 
 {
     align-self: flex-start;
     transform: scale(2);
-    margin-left: 18px;
-    margin-top: 5px;
-}
-
-select {
-    width: 100%;
-    height: 50px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    font-size: large;
-}
-
-textarea {
-    font-size: larger;
 }

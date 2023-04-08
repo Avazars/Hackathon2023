@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const loginRouter = express_1.default.Router();
-loginRouter.get('/', (req, res) => {
-    res.render('pages/LoginPage', { pageTitle: "Login" });
+const genEquipmentRouter = express_1.default.Router();
+genEquipmentRouter.get("/", (req, res) => {
+    res.render("pages/GenEquipment", { pageTitle: "Equipment" });
 });
-exports.default = loginRouter;
+exports.default = genEquipmentRouter;

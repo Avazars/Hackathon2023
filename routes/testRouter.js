@@ -8,6 +8,4 @@ const testRouter = express_1.default.Router();
 testRouter.get('/', (req, res) => {
     res.render('pages/test', { pageTitle: "test" });
 });
-testRouter.get('/main', (req, res) => {
-});
 exports.default = testRouter;

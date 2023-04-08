@@ -8,16 +8,29 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const imgbox = document.getElementById('imgbox');
-const chatbox = document.getElementById('chatbox');
-const messageForm = document.getElementById('message-form');
-const messageInput = document.getElementById('message-input');
-// Add event listener to message form
-messageForm.addEventListener('submit', (event) => __awaiter(void 0, void 0, void 0, function* () {
-    event.preventDefault();
-    const message = messageInput.value;
-    messageInput.value = '';
-    // Send message to server using POST request
+const advContextBox = document.getElementById("context");
+const advGenButton = document.getElementById("gen");
+const advOutputBox = document.getElementById("output");
+function buildCharacterString() {
+    let output = "";
+    const beginning = "Create me a Character that:\n";
+    let context = "\nAdditional Context: ";
+    if (advContextBox.value) {
+        context += advContextBox.value;
+        output += context;
+    }
+    output += "\nPlease Write in the format of " +
+        "\n Name: " +
+        "\n Appearance: " +
+        "\n Abilities: " +
+        "\n Behavior: " +
+        "\n Origin: ";
+    console.log(output);
+    return output;
+}
+advGenButton.addEventListener('click', () => __awaiter(void 0, void 0, void 0, function* () {
+    const message = buildCharacterString();
+    console.log(message);
     const response = yield fetch('/ai/text', {
         method: 'POST',
         headers: {
@@ -27,14 +40,6 @@ messageForm.addEventListener('submit', (event) => __awaiter(void 0, void 0, void
     });
     // Extract response from server and display it in chatbox
     const data = yield response.json();
-    const reply = data.message;
-    const messageHtml = `
-          <div>
-            <strong>You:</strong> ${message}
-          </div>
-          <div>
-            <strong>Bot:</strong> ${reply.content}
-          </div>
-        `;
-    chatbox.insertAdjacentHTML('beforeend', messageHtml);
+    const reply = data.message.content;
+    advOutputBox.value = reply;
 }));

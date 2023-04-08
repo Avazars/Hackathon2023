@@ -4,7 +4,7 @@ const messageForm = document.getElementById('message-form') as HTMLFormElement;
 const messageInput = document.getElementById('message-input') as HTMLInputElement;
 
 // Add event listener to message form
-    messageForm.addEventListener('submit', async (event) => {
+messageForm.addEventListener('submit', async (event) => {
     event.preventDefault();
     const message = messageInput.value;
     messageInput.value = '';

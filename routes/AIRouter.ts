@@ -18,7 +18,7 @@ async function generateText(prompt: string){
     return completion.data.choices[0].message;
 }
 
-AIRouter.post('/text', async (req: Request, res: Response) => {
+AIRouter.post('/aiText', async (req: Request, res: Response) => {
     const { message } = req.body;
     const reply = await generateText(message);
     console.log("Text Gen")
