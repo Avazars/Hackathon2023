@@ -14,7 +14,7 @@ app.use(express.json());
 app.use('/', loginRouter);
 app.use('/main', mainMenuRouter);
 
-app.use('/main', mainRouter);
+app.use('/test', mainRouter);
 app.use('/ai',  AIRouter);
 
 app.listen(port, () => console.log(`Express app running on port ${port}!`));
