@@ -11,9 +11,34 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 const advContextBox = document.getElementById("context");
 const advGenButton = document.getElementById("gen");
 const advOutputBox = document.getElementById("output");
+const advNameArea = document.getElementById("nameArea");
+const advTouchStones = document.getElementById("touchStones");
+const advSkills = document.getElementById("skills");
+const advAlignment = document.getElementById("Alignment");
+const advStoryRole = document.getElementById("StoryRole");
+const advNpcCheckbox = document.getElementById("npcCheckbox");
 function buildCharacterString() {
     let output = "";
     const beginning = "Create me a Character that:\n";
+    output = beginning + "\n";
+    if (advNameArea.value !== "") {
+        output += "Character Name: " + advNameArea.value + ", ";
+    }
+    if (advTouchStones.value !== "") {
+        output += "Character Touchstones: " + advTouchStones.value + ", ";
+    }
+    if (advSkills.value !== "") {
+        output += "Character Skills: " + advSkills.value + ", ";
+    }
+    if (advAlignment.value !== "undefined") {
+        output += "Alignment: " + advAlignment.value + ", ";
+    }
+    if (advStoryRole.value !== "undefined") {
+        output += "Role: " + advStoryRole.value + ", ";
+    }
+    if (advNpcCheckbox.checked) {
+        output += "IsNPC: " + advNpcCheckbox.checked + "\n ";
+    }
     let context = "\nAdditional Context: ";
     if (advContextBox.value) {
         context += advContextBox.value;
@@ -25,13 +50,12 @@ function buildCharacterString() {
         "\n Abilities: " +
         "\n Behavior: " +
         "\n Origin: ";
-    console.log(output);
     return output;
 }
 advGenButton.addEventListener('click', () => __awaiter(void 0, void 0, void 0, function* () {
     const message = buildCharacterString();
     console.log(message);
-    const response = yield fetch('/ai/text', {
+    const response = yield fetch('/ai/aitext', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

@@ -17,7 +17,7 @@ const monGenButton = document.getElementById("gen");
 const monOutputBox = document.getElementById("output");
 function buildMonsterString() {
     let output = "";
-    const beginning = "Create me a creature that:\n";
+    const beginning = "Create me a Creature that:\n";
     output += beginning;
     if (monSizeSelector.value != 'undefined') {
         output += "size: " + monSizeSelector.value + ", ";
@@ -40,9 +40,8 @@ function buildMonsterString() {
         "\n Name: " +
         "\n Appearance: " +
         "\n Abilities: " +
-        "\n Behavior: " +
+        "\n Behaviors: " +
         "\n Origin: ";
-    console.log(output);
     return output;
 }
 monGenButton.addEventListener('click', () => __awaiter(void 0, void 0, void 0, function* () {

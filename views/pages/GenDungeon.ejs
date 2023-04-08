@@ -19,34 +19,23 @@
     </div>
 
     <div class="column">
-        <label class=padded for="sizeSelector">Size</label>
-        <select name="sizeSelector" id="sizeSelector">
-            <option value="undefined">--</option>
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
-            <option value="large">Large</option>
-        </select>
+        <label for="climate">Climate:</label>
+        <textarea rows="1" placeholder="Insert Climate" id="climate"></textarea>
 
-        <label class=padded for="locomotionSelector">Locomotion</label>
-        <select name="locomotionSelector" id="locomotionSelector">
-            <option value="undefined">--</option>
-            <option value="aerial">Aerial</option>
-            <option value="arboreal">Arboreal</option>
-            <option value="aquatic">Aquatic</option>
-            <option value="subterranean">Subterranean</option>
-            <option value="terrestrial">Terrestrial</option>
-        </select>
+        <label for="terrain">Terrain Present:</label>
+        <textarea class="fillboxes" rows="1" placeholder="Insert Terrain" id="terrain"></textarea>
 
-        <label class=padded for="difficultySelector">Difficulty</label>
-        <select name="difficultySelector" id="difficultySelector">
-            <option value="undefined">--</option>
-            <option value="easy">Easy</option>
-            <option value="intermediate">Intermediate</option>
-            <option value="hard">Hard</option>
-        </select>
+        <label for="resources">Resources Available:</label>
+        <textarea class="fillboxes" rows="1" placeholder="Insert Resources" id="resources"></textarea>
 
-        <label class=padded for="bossCheckbox">Boss</label>
-        <input class="largeCheckbox" type="checkbox" id="bossCheckbox" name="bossCheckbox" value="Boss">
+        <label for="naturalPhenomena">Dangerous/Unstable Natural Phenomena:</label>
+        <textarea class="fillboxes" rows="1" placeholder="Insert Natural Phenomena" id="naturalPhenomena"></textarea>
+
+        <label for="magicalElements">Magical/Supernatural Elements:</label>
+        <textarea class="fillboxes" rows="1" placeholder="Insert Magical/Supernatural Elements" id="magicalElements"></textarea>
+
+        <label for="isDungeon">Is Dungeon:</label>
+        <input type="checkbox" id="isDungeon" name="isDungeon" value="true">
     </div>
 
     <div class="column">
@@ -57,5 +46,5 @@
     </div>
 </div>
 </body>
-<script src="/scripts/GenerateMonsterScript.js"></script>
+<script src="/scripts/GenerateDungeonScript.js"></script>
 </html>

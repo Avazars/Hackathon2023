@@ -2,6 +2,12 @@ const advContextBox = document.getElementById("context") as HTMLTextAreaElement;
 const advGenButton = document.getElementById("gen") as HTMLButtonElement;
 const advOutputBox = document.getElementById("output") as HTMLTextAreaElement;
 
+const advNameArea: HTMLTextAreaElement = document.getElementById("nameArea") as HTMLTextAreaElement;
+const advTouchStones: HTMLTextAreaElement = document.getElementById("touchStones") as HTMLTextAreaElement;
+const advSkills: HTMLTextAreaElement = document.getElementById("skills") as HTMLTextAreaElement;
+const advAlignment: HTMLSelectElement = document.getElementById("Alignment") as HTMLSelectElement;
+const advStoryRole: HTMLSelectElement = document.getElementById("StoryRole") as HTMLSelectElement;
+const advNpcCheckbox: HTMLInputElement = document.getElementById("npcCheckbox") as HTMLInputElement;
 
 
 function buildCharacterString() : string{
@@ -9,7 +15,31 @@ function buildCharacterString() : string{
 
     const beginning: string = "Create me a Character that:\n"
 
+    output = beginning+"\n";
 
+    if (advNameArea.value !== "") {
+        output += "Character Name: "+ advNameArea.value +", ";
+    }
+
+    if (advTouchStones.value !== "") {
+        output += "Character Touchstones: "+ advTouchStones.value +", ";
+    }
+
+    if (advSkills.value !== "") {
+        output += "Character Skills: "+ advSkills.value +", ";
+    }
+
+    if (advAlignment.value !== "undefined") {
+        output += "Alignment: "+ advAlignment.value +", ";
+    }
+
+    if (advStoryRole.value !== "undefined") {
+        output += "Role: "+ advStoryRole.value +", ";
+    }
+
+    if (advNpcCheckbox.checked) {
+        output += "IsNPC: "+ advNpcCheckbox.checked +"\n ";
+    }
 
     let context: string = "\nAdditional Context: ";
     if(advContextBox.value){
@@ -24,7 +54,6 @@ function buildCharacterString() : string{
         "\n Behavior: " +
         "\n Origin: "
 
-    console.log(output)
     return output;
 }
 
@@ -33,7 +62,7 @@ advGenButton.addEventListener('click', async ()=>{
     const message = buildCharacterString();
     console.log(message);
 
-    const response = await fetch('/ai/text', {
+    const response = await fetch('/ai/aitext', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

@@ -19,34 +19,45 @@
     </div>
 
     <div class="column">
-        <label class=padded for="sizeSelector">Size</label>
-        <select name="sizeSelector" id="sizeSelector">
-            <option value="undefined">--</option>
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
-            <option value="large">Large</option>
+        <label for="objectName">Name of the Object:</label>
+        <textarea id="objectName" name="objectName" placeholder="Enter the name of the object"></textarea>
+
+        <label for="objectType">Type:</label>
+        <select id="objectType" name="objectType">
+            <option value="">Select an object type</option>
+            <option value="Weapon">Weapon</option>
+            <option value="Armor">Armor</option>
+            <option value="Tool">Tool</option>
+            <option value="Consumable">Consumable</option>
+            <option value="Other">Other</option>
         </select>
 
-        <label class=padded for="locomotionSelector">Locomotion</label>
-        <select name="locomotionSelector" id="locomotionSelector">
-            <option value="undefined">--</option>
-            <option value="aerial">Aerial</option>
-            <option value="arboreal">Arboreal</option>
-            <option value="aquatic">Aquatic</option>
-            <option value="subterranean">Subterranean</option>
-            <option value="terrestrial">Terrestrial</option>
+        <label for="objectRarity">Rarity:</label>
+        <select id="objectRarity" name="objectRarity">
+            <option value="">Select an object rarity</option>
+            <option value="Common">Common</option>
+            <option value="Uncommon">Uncommon</option>
+            <option value="Rare">Rare</option>
+            <option value="Very Rare">Very Rare</option>
+            <option value="Legendary">Legendary</option>
         </select>
 
-        <label class=padded for="difficultySelector">Difficulty</label>
-        <select name="difficultySelector" id="difficultySelector">
-            <option value="undefined">--</option>
-            <option value="easy">Easy</option>
-            <option value="intermediate">Intermediate</option>
-            <option value="hard">Hard</option>
+        <label for="objectCondition">Condition:</label>
+        <select id="objectCondition" name="objectCondition">
+            <option value="">Select the condition of the object</option>
+            <option value="New">New</option>
+            <option value="Like New">Like New</option>
+            <option value="Used">Used</option>
+            <option value="Damaged">Damaged</option>
+            <option value="Broken">Broken</option>
         </select>
 
-        <label class=padded for="bossCheckbox">Boss</label>
-        <input class="largeCheckbox" type="checkbox" id="bossCheckbox" name="bossCheckbox" value="Boss">
+        <label for="objectAbilities">Special Abilities:</label>
+        <textarea class="fillboxes" id="objectAbilities" name="objectAbilities" placeholder="Enter any special abilities or properties of the object"></textarea>
+
+        <label for="objectWeight">Weight:</label>
+        <textarea id="objectWeight" name="objectWeight" placeholder="Enter the weight of the object"></textarea>
+
     </div>
 
     <div class="column">

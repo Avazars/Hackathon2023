@@ -41,6 +41,7 @@ body {
     background-color: #fff;
     border: 1px solid #666;
     padding: 20px;
+    border-radius: 20px;
 }
 
 .grid-item {
@@ -51,6 +52,7 @@ body {
   justify-content: center;
   background-color: #dce0dd;
   border: 1px solid #666;
+    border-radius: 44px;
 }
 .grid-item:hover {
     opacity: 60%;

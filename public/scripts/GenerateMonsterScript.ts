@@ -10,7 +10,7 @@ const monOutputBox = document.getElementById("output") as HTMLTextAreaElement;
 function buildMonsterString() : string{
     let output: string = "";
 
-    const beginning: string = "Create me a creature that:\n"
+    const beginning: string = "Create me a Creature that:\n"
 
     output += beginning;
 
@@ -37,10 +37,9 @@ function buildMonsterString() : string{
         "\n Name: " +
         "\n Appearance: " +
         "\n Abilities: " +
-        "\n Behavior: " +
+        "\n Behaviors: " +
         "\n Origin: "
 
-    console.log(output)
     return output;
 }
 
