@@ -1,4 +1,8 @@
 import express from 'express';
+import genMonsterRouter from './routes/gen-monster';
+import genEquipmentRouter from './routes/gen-equipment';
+import genDungeonRouter from './routes/gen-dungeon';
+import genAdventurerRouter from './routes/gen-adventurer';
 import loginRouter from './routes/login'
 import mainMenuRouter from './routes/mainmenu';
 import testRouter from './routes/testRouter'
@@ -13,6 +17,11 @@ app.use(express.json());
 
 app.use('/', loginRouter);
 app.use('/main', mainMenuRouter);
+app.use('/monster', genMonsterRouter);
+app.use('/equipment', genEquipmentRouter);
+app.use('/dungeon', genDungeonRouter);
+app.use('/adventurer', genAdventurerRouter);
+
 
 app.use('/test', testRouter);
 app.use('/ai',  AIRouter);
