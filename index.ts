@@ -1,5 +1,6 @@
 import express from 'express';
-import mainRouter from './routes/main'
+import loginRouter from './routes/login'
+import mainMenuRouter from './routes/mainmenu';
 
 const app = express();
 const port = 3000;
@@ -23,8 +24,9 @@ async function start(){
     console.log(completion.data.choices[0].message);
 }
 
-start();
+// start();
 
-app.use('/', mainRouter);
+app.use('/', loginRouter);
+app.use('/main', mainMenuRouter);
 
 app.listen(port, () => console.log(`Express app running on port ${port}!`));

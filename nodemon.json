@@ -1,0 +1,4 @@
+{
+    "ext" : "ts, css, json, html, ejs, js",
+    "delay": 3
+}

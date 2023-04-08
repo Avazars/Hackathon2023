@@ -33,6 +33,6 @@ function start() {
         console.log(completion.data.choices[0].message);
     });
 }
-start();
+// start();
 app.use('/', main_1.default);
 app.listen(port, () => console.log(`Express app running on port ${port}!`));

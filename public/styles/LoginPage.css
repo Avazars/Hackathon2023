@@ -1,0 +1,45 @@
+@font-face {
+    font-family: "beleren";
+    src: url('../fonts/Beleren2016SmallCaps-Bold.woff');
+}
+
+body {
+    background-color: grey;
+}
+
+h1 {
+    color: red;
+    text-align: center;
+    font-family: "beleren";
+    text-shadow: 2px 2px #000000;
+}
+
+h2 {
+    color: red;
+    text-align: center;
+    font-family: "beleren";
+    text-shadow: 2px 2px #000000;
+}
+
+button {
+    align-self: center;
+    width: fit-content;
+    margin-top: 10px;
+}
+
+.credentials {
+    margin: auto;
+    width: 300px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 256px;
+    height: 256px;
+  }
