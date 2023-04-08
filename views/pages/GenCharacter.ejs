@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="styles/Gen.css">
+
+<html>
+<head>
+    <title> PathDragon RPG Generator </title>
+</head>
+<button onclick="window.location.href = 'http://localhost:3000/main';">
+    Return to Main Menu
+</button>
+
+<body>
+<h1><b>PathDragon: the RPG Generator</b></h1>
+<h2><b>Generate <%= pageTitle %></b></h2>
+
+<div class="columns">
+
+        <div class="column">
+        <label class=padded for="context">Additional Context</label>
+        <textarea class="context" id="context" name="context"></textarea>
+        </div>
+
+
+    <div class="column">
+        <label for="nameArea"> Character Name</label>
+        <textarea rows="1" placeholder="Insert Characters Name" id="nameArea"></textarea>
+
+        <label for="touchStones"> Character Touchstones</label>
+        <textarea class="fillboxes" id="touchStones"></textarea>
+
+        <label for="skills"> Character Skills</label>
+        <textarea class="fillboxes" id="skills"></textarea>
+
+        <label for="Alignment">Alignment</label>
+        <select name="Alignment" id="Alignment">
+            <option value="undefined">--</option>
+            <option value="lawful-good">Lawful Good</option>
+            <option value="neutral-good">Neutral Good</option>
+            <option value="chaotic-good">Chaotic Good</option>
+            <option value="lawful-neutral">Lawful Neutral</option>
+            <option value="true-neutral">True Neutral</option>
+            <option value="chaotic-neutral">Chaotic Neutral</option>
+            <option value="lawful-evil">Lawful Evil</option>
+            <option value="neutral-evil">Neutral Evil</option>
+            <option value="chaotic-evil">Chaotic Evil</option>
+        </select>
+
+        <label for="StoryRole">Story Role</label>
+        <select name="Role in Story" id="StoryRole">
+            <option value="undefined">--</option>
+            <option value="Hero">Hero</option>
+            <option value="Villain">Villain</option>
+        </select>
+
+        <label for="npcCheckbox"> Npc </label>
+        <input type="checkbox" id="npcCheckbox" name="npcCheckbox" value="NPC">
+    </div>
+
+
+        <div class="column">
+        <label class="extraPadded" for="output">Output</label>
+        <textarea disabled class="output" id="output" name="output"></textarea>
+        <button id="gen" class="extraPadded">Generate</button>
+        <p class="extraPadded"><i>Tip: Leave a dropdown box blank to receive a random value</i></p>
+        </div>
+</div>
+</body>
+<script src="/scripts/GenerateAdventurerScript.js"></script>
+</html>

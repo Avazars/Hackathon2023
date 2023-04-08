@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="styles/Gen.css">
+
+<html>
+<head>
+    <title> PathDragon RPG Generator </title>
+</head>
+<button onclick="window.location.href = 'http://localhost:3000/main';">
+    Return to Main Menu
+</button>
+
+<body>
+<h1><b>PathDragon: the RPG Generator</b></h1>
+<h2><b>Generate <%= pageTitle %></b></h2>
+<div class="columns">
+    <div class="column">
+        <label class=padded for="context">Additional Context</label>
+        <textarea class="context" id="context" name="context"></textarea>
+    </div>
+
+    <div class="column">
+        <label for="objectName">Name of the Object:</label>
+        <textarea id="objectName" name="objectName" placeholder="Enter the name of the object"></textarea>
+
+        <label for="objectType">Type:</label>
+        <select id="objectType" name="objectType">
+            <option value="">Select an object type</option>
+            <option value="Weapon">Weapon</option>
+            <option value="Armor">Armor</option>
+            <option value="Tool">Tool</option>
+            <option value="Consumable">Consumable</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="objectRarity">Rarity:</label>
+        <select id="objectRarity" name="objectRarity">
+            <option value="">Select an object rarity</option>
+            <option value="Common">Common</option>
+            <option value="Uncommon">Uncommon</option>
+            <option value="Rare">Rare</option>
+            <option value="Very Rare">Very Rare</option>
+            <option value="Legendary">Legendary</option>
+        </select>
+
+        <label for="objectCondition">Condition:</label>
+        <select id="objectCondition" name="objectCondition">
+            <option value="">Select the condition of the object</option>
+            <option value="New">New</option>
+            <option value="Like New">Like New</option>
+            <option value="Used">Used</option>
+            <option value="Damaged">Damaged</option>
+            <option value="Broken">Broken</option>
+        </select>
+
+        <label for="objectAbilities">Special Abilities:</label>
+        <textarea class="fillboxes" id="objectAbilities" name="objectAbilities" placeholder="Enter any special abilities or properties of the object"></textarea>
+
+        <label for="objectWeight">Weight:</label>
+        <textarea id="objectWeight" name="objectWeight" placeholder="Enter the weight of the object"></textarea>
+
+    </div>
+
+    <div class="column">
+        <label class="extraPadded" for="output">Output</label>
+        <textarea disabled class="output" id="output" name="output"></textarea>
+        <button id="gen" class="extraPadded">Generate</button>
+        <p class="extraPadded"><i>Tip: Leave a dropdown box blank to receive a random value</i></p>
+    </div>
+</div>
+</body>
+<script src="/scripts/GenerateEquipmentScript.js"></script>
+</html>

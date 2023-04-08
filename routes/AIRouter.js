@@ -19,7 +19,8 @@ const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
-function start(prompt) {
+const AIRouter = express_1.default.Router();
+function generateText(prompt) {
     return __awaiter(this, void 0, void 0, function* () {
         const completion = yield openai.createChatCompletion({
             model: "gpt-3.5-turbo",
@@ -28,13 +29,10 @@ function start(prompt) {
         return completion.data.choices[0].message;
     });
 }
-const AIRouter = express_1.default.Router();
-AIRouter.get('/', (req, res) => {
-    res.render('pages/main', { pageTitle: "main" });
-});
-AIRouter.post('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+AIRouter.post('/aiText', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { message } = req.body;
-    const reply = yield start(message);
+    const reply = yield generateText(message);
+    console.log("Text Gen");
     res.send({ message: reply });
 }));
 exports.default = AIRouter;

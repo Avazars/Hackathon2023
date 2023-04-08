@@ -1,0 +1,75 @@
+@font-face {
+    font-family: "beleren";
+    src: url('../fonts/Beleren2016SmallCaps-Bold.woff');
+}
+
+body {
+    background-color: grey;
+}
+
+h1 {
+    color: red;
+    text-align: center;
+    font-family: "beleren";
+    text-shadow: 2px 2px #000000;
+}
+
+h2 {
+    color: red;
+    text-align: center;
+    font-family: "beleren";
+    text-shadow: 2px 2px #000000;
+}
+
+.columns{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.column {
+    font-size: larger;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    float: left;
+    width: 25%;
+}
+
+.column select {
+    height: 30px;
+    margin-bottom: 15px;
+}
+
+.column label {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.column textarea{
+    margin-bottom: 15px;
+    resize: none;
+}
+
+.fillboxes{
+    height: 60px;
+}
+
+.context {
+    box-sizing: border-box;
+    height: 700px;
+}
+
+.output {
+    box-sizing: border-box;
+    height: 600px;
+}
+
+input[type=checkbox] 
+{
+    align-self: flex-start;
+    transform: scale(2);
+    margin-top: 7px;
+}
