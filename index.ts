@@ -8,5 +8,4 @@ app.use(express.static(__dirname + '/public'))
 
 app.use('/', mainRouter);
 
-
 app.listen(port, () => console.log(`Express app running on port ${port}!`));
