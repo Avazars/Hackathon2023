@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="styles/GenMonster.css">
+
+<html>
+    <head>
+        <title> PathDragon RPG Generator </title>
+    </head>
+    <button onclick="window.location.href = 'http://localhost:3000/main';">
+        Return to Main Menu
+    </button>
+
+    <body>
+        <h1><b>PathDragon: the RPG Generator</b></h1>
+        <h2><b>Generate Monster</b></h2>
+
+        <div class="column">
+            <label class=padded for="context">Additional Context</label>
+            <textarea class="context" id="context" name="context"></textarea>
+        </div>
+ 
+        <div class="column">
+            <label class=padded for="sizeSelector">Size</label>
+            <select name="sizeSelector" id="sizeSelector">
+                <option value="undefined">--</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+    
+            <label class=padded for="locomotionSelector">Locomotion</label>
+            <select name="locomotionSelector" id="locomotionSelector">
+                <option value="undefined">--</option>
+                <option value="aerial">Aerial</option>
+                <option value="arboreal">Arboreal</option>
+                <option value="aquatic">Aquatic</option> 
+                <option value="subterranean">Subterranean</option>
+                <option value="terrestrial">Terrestrial</option>
+            </select>
+    
+            <label class=padded for="difficultySelector">Difficulty</label>
+            <select name="difficultySelector" id="difficultySelector">
+                <option value="undefined">--</option>
+                <option value="easy">Easy</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="hard">Hard</option> 
+            </select>
+    
+            <label class=padded for="bossCheckbox">Boss</label>
+            <input class="largeCheckbox" type="checkbox" id="bossCheckbox" name="bossCheckbox" value="Boss">
+        </div>
+
+        <div class="column">
+            <label class="extraPadded" for="output">Output</label>
+            <textarea class="output" id="output" name="output"></textarea>
+            <button class="extraPadded">Generate</button>
+            <p class="extraPadded"><i>Tip: Leave a dropdown box blank to receive a random value</i></p>
+        </div>
+    </body>
+</html>
