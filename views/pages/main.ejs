@@ -1,4 +1,47 @@
-<!DOCTYPE html>
 <html>
-    <script type="module" src="scripts/canvas-drawing.js"></script>
+    <body>
+
+    <div id="chatbox"></div>
+    <form id="message-form">
+    <label for="message-input"></label>
+        <textarea type="text" id="message-input" placeholder="Type your message here"></textarea>
+      <button type="submit">Send</button>
+    </form>
+
+    <script>
+      const chatbox = document.getElementById('chatbox');
+      const messageForm = document.getElementById('message-form');
+      const messageInput = document.getElementById('message-input');
+
+      // Add event listener to message form
+      messageForm.addEventListener('submit', async (event) => {
+          event.preventDefault();
+          const message = messageInput.value;
+          messageInput.value = '';
+
+          // Send message to server using POST request
+          const response = await fetch('/ai', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ message })
+          });
+
+          // Extract response from server and display it in chatbox
+          const data = await response.json();
+          const reply = data.message;
+          console.log(reply)
+          const messageHtml = `
+          <div>
+            <strong>You:</strong> ${message}
+          </div>
+          <div>
+            <strong>Bot:</strong> ${reply.content}
+          </div>
+        `;
+          chatbox.insertAdjacentHTML('beforeend', messageHtml);
+      });
+    </script>
+  </body>
 </html>
